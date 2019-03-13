@@ -1,0 +1,28 @@
+<h1>Login</h1>
+
+<div class="login-container">
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" class="login-form">
+
+    <h5 *ngIf="success">Your form is valid!</h5>
+
+    <label class="field-container">
+      Email
+      <input type="text" formControlName="name" class="form-input">
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+      </div>
+    </label>
+
+    <label class="field-container">
+      Password
+      <input type="text" formControlName="name" class="form-input">
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+      </div>
+    </label>
+
+
+    <input type="submit" value="Connexion" class="cta">
+
+  </form>
+</div>
