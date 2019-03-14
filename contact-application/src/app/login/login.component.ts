@@ -27,9 +27,9 @@ export class LoginComponent implements OnInit {
 
     this.data.logUser().subscribe(data => {
 
-      if(data == true ){
+      // if(data == false ){
           localStorage.setItem('connected', 'true')
-      }
+      // }
 
     });
 
