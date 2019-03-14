@@ -10,6 +10,7 @@ import { NewContactComponent } from './new-contact/new-contact.component';
 import { NewGroupComponent } from './new-group/new-group.component';
 import { UpdateContactComponent } from './update-contact/update-contact.component';
 import { UpdateGroupComponent } from './update-group/update-group.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'new-group', component: NewGroupComponent},
   {path: 'update-contact/:id', component: UpdateContactComponent},
   {path: 'update-group/:id', component: UpdateGroupComponent},
+  {path: 'search', component: SearchComponent}
 ];
 
 @NgModule({

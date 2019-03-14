@@ -16,6 +16,9 @@ import { NewContactComponent } from './new-contact/new-contact.component';
 import { NewGroupComponent } from './new-group/new-group.component';
 import { UpdateContactComponent } from './update-contact/update-contact.component';
 import { UpdateGroupComponent } from './update-group/update-group.component';
+import { SearchComponent } from './search/search.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,15 @@ import { UpdateGroupComponent } from './update-group/update-group.component';
     NewContactComponent,
     NewGroupComponent,
     UpdateContactComponent,
-    UpdateGroupComponent
+    UpdateGroupComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
