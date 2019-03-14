@@ -1,26 +1,12 @@
-<h1>Group name</h1>
-
-<ul>
-  <li>
-    <img>
-    <p> Contact</p>
+<div layout="row" layout-align="center center">
+    <button class="btn  btn-info btn-circle btn-edit-contact" type="button" [routerLink]="['/update-group/', group.group_id]" ><i class="fas fa-pen"></i></button>
+</div>  
+<h1>{{ group.name | uppercase }}</h1>
+<ul *ngIf="groups">
+  <li *ngFor="let contact of group.contact" [routerLink]="['/single-contact/', contact.contact_id]">
+    <p >{{ contact.name }}</p>
   </li>
 </ul>
-<ul>
-  <li>
-    <img>
-    <p> Contact</p>
-  </li>
-</ul>
-<ul>
-  <li>
-    <img>
-    <p> Contact</p>
-  </li>
-</ul>
-<ul>
-  <li>
-    <img>
-    <p> Contact</p>
-  </li>
-</ul>
+<div layout="row" layout-align="center center">
+    <button class="btn  btn-red btn-circle" type="button" (click)="unsetGroup(group.group_id)" ><i class="fas fa-trash-alt"></i></button>
+</div>

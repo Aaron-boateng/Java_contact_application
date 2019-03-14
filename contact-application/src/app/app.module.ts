@@ -12,6 +12,10 @@ import { ContactComponent } from './contact/contact.component';
 import { GroupComponent } from './group/group.component';
 import { SingleGroupComponent } from './single-group/single-group.component';
 import { SingleContactComponent } from './single-contact/single-contact.component';
+import { NewContactComponent } from './new-contact/new-contact.component';
+import { NewGroupComponent } from './new-group/new-group.component';
+import { UpdateContactComponent } from './update-contact/update-contact.component';
+import { UpdateGroupComponent } from './update-group/update-group.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { SingleContactComponent } from './single-contact/single-contact.componen
     ContactComponent,
     GroupComponent,
     SingleGroupComponent,
-    SingleContactComponent
+    SingleContactComponent,
+    NewContactComponent,
+    NewGroupComponent,
+    UpdateContactComponent,
+    UpdateGroupComponent
   ],
   imports: [
     BrowserModule,

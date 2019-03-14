@@ -6,14 +6,22 @@ import { ContactComponent } from './contact/contact.component';
 import { GroupComponent } from './group/group.component';
 import { SingleGroupComponent } from './single-group/single-group.component';
 import { SingleContactComponent } from './single-contact/single-contact.component';
+import { NewContactComponent } from './new-contact/new-contact.component';
+import { NewGroupComponent } from './new-group/new-group.component';
+import { UpdateContactComponent } from './update-contact/update-contact.component';
+import { UpdateGroupComponent } from './update-group/update-group.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'group', component: GroupComponent},
-  {path: 'single-group', component: SingleGroupComponent},
-  {path: 'single-contact', component: SingleContactComponent}
+  {path: 'single-group/:id', component: SingleGroupComponent},
+  {path: 'single-contact/:id', component: SingleContactComponent},
+  {path: 'new-contact', component: NewContactComponent},
+  {path: 'new-group', component: NewGroupComponent},
+  {path: 'update-contact/:id', component: UpdateContactComponent},
+  {path: 'update-group/:id', component: UpdateGroupComponent},
 ];
 
 @NgModule({

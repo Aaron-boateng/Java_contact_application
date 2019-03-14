@@ -1,26 +1,7 @@
-<h1>Group</h1>
-
-<ul>
-  <li>
-    <img>
-    <p> Group</p>
-  </li>
-</ul>
-<ul>
-  <li>
-    <img>
-    <p> Group</p>
-  </li>
-</ul>
-<ul>
-  <li>
-    <img>
-    <p> Group</p>
-  </li>
-</ul>
-<ul>
-  <li>
-    <img>
-    <p> Group</p>
+<button class="btn purple btn-circle" type="button" routerLink="/new-group" ><i class="fas fa-plus"></i></button>
+<h1>Groupes</h1>
+<ul *ngIf="groups">
+  <li *ngFor="let group of groups" [routerLink]="['/single-group/', group.group_id]">
+    <p >{{ group.name }}</p>
   </li>
 </ul>

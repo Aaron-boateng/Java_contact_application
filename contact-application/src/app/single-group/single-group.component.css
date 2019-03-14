@@ -20,4 +20,135 @@ ul {
     border-radius: 50%;
     width: 100%;
   }
+  .hide{
+    display: none;
+  }
+
+  .msg-error{
+    color:red;
+  }
+
+  .msg-info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+.msg-success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+.msg-warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+.msg-error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+.msg-info i, .msg-success i, .msg-warning i, .msg-error i {
+    margin:10px 22px;
+    font-size:2em;
+    vertical-align:middle;
+}
+
+.btn {
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   
+  background-color: #7700FF;
+  color: #ecf0f1;
+  
+  transition: background-color .3s;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #7700FF;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.btn:before {
+  content: "";
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: block;
+  width: 0;
+  padding-top: 0;
+    
+  border-radius: 100%;
+  
+  background-color: rgba(236, 240, 241, .3);
+  
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+/* Styles, not important */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.btn-circle{
+
+  border-radius: 50%;
+  padding: 30px;
+  font-size: 20px;
+
+}
+
+.btn-red{
+
+  background-color: red;
+
+}
+
+.btn-red:hover, .btn-red:focus {
+  background-color:red;
+}
+
+
+.btn-info{
+
+  background-color: green;
+
+}
+
+.btn-info:hover, .btn-info:focus {
+  background-color: green;
+}
+
+
+.btn-edit-contact{
+  position: absolute;
+  right: 10%;
+  top: 13.5%;
+}

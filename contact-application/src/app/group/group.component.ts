@@ -10,13 +10,15 @@ export class GroupComponent implements OnInit {
 
   constructor(private data: DataService) { }
 
-  users: Object;
+  groups: Object;
 
   ngOnInit() {
 
-    this.data.getUsers().subscribe(data => {
-      this.users = data
-      console.log(this.users);
+    const isLogged = this.data.isLogged();
+        
+    this.data.getGroup().subscribe(data => {
+      this.groups = data;
+      console.log(this.groups);
     });
 
   }
