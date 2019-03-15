@@ -124,8 +124,19 @@ export class DataService {
   }
 
 
-  logUser() {
-    return this.http.get('http://localhost:8080/contact/login/',
+  logUser(email, password) {
+    return this.http.get('http://localhost:8080/contact/login/?email='+ email + '&password='+ password,
+      {
+        headers:{
+          'content':"application/json",
+          'content-type':"application/x-www-form-urlencoded"
+        }
+      }
+    )
+  }
+
+  setUser(email, password) {
+    return this.http.get('http://localhost:8080/contact/register/?email='+ email + '&password='+ password,
       {
         headers:{
           'content':"application/json",
@@ -145,17 +156,48 @@ export class DataService {
 
   }
   
+  isUser(){
+
+    const isLogged =  localStorage.getItem('connected');
+
+    if(isLogged != "true"){
+      return false;
+    }
+    else{
+      return true;
+    }
+
+  }
+  
   contactRedirection(){
 
       this.router.navigate(['/contact']);
       
   }
 
+  loginRedirection(){
+
+    this.router.navigate(['']);
+    
+  }
+  
+
   groupRedirection(){
 
     this.router.navigate(['/group']);
     
   }
+
+  loggedRedirection(){
+
+    const isLogged =  localStorage.getItem('connected');
+
+    if(isLogged == "true"){
+      this.router.navigate(['/contact']);
+    }
+
+  }
+
 
     // Delete contact
   unsetSingleGroup(id) {
@@ -168,4 +210,27 @@ export class DataService {
       }
     )
   }
+
+  searchContact(input) {
+    return this.http.get('http://localhost:8080/contact/search/contact/' + input,
+      {
+        headers:{
+          'content':"application/json",
+          'content-type':"application/x-www-form-urlencoded"
+        }
+      }
+    )
+  }
+
+  searchGroup(input) {
+    return this.http.get('http://localhost:8080/contact/search/group/' + input,
+      {
+        headers:{
+          'content':"application/json",
+          'content-type':"application/x-www-form-urlencoded"
+        }
+      }
+    )
+  }
+  
 }

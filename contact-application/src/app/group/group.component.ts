@@ -18,7 +18,6 @@ export class GroupComponent implements OnInit {
         
     this.data.getGroup().subscribe(data => {
       this.groups = data;
-      console.log(this.groups);
     });
 
   }

@@ -10,8 +10,7 @@
   <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" class="login-form">
     
     <label class="field-container">
-      Nom
-      <input type="text" formControlName="name" class="form-input">
+      <input type="text" formControlName="name" class="form-input" placeholder="Nom de groupe ...">
       <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
         <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
       </div>

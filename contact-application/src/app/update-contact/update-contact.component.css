@@ -47,6 +47,16 @@ label {
     min-height: 35px;
     border-radius: 50px;
     border: solid 1px gray;
+    font-size: 25px;
+
+  }
+
+  .form-input{
+
+    min-width: 100%;
+    min-height: 35px;
+    border-radius: 50px;
+    border: solid 1px gray;
 
   }
 

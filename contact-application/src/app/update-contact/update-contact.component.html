@@ -10,30 +10,25 @@
   <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" class="login-form">
 
     <label class="field-container">
-      Prénom
       <div *ngIf="submitted && messageForm.controls.firstname.errors" class="msg-error">
           <div *ngIf="messageForm.controls.firstname.errors.required">Contact name is required</div>
         </div>
-      <input type="text" formControlName="firstname" class="form-input">
+      <input type="text" formControlName="firstname" class="form-input" placeholder="Prénom">
     </label>
 
     <label class="field-container">
-      Nom
-      <input type="text" formControlName="name" class="form-input">
+      <input type="text" formControlName="name" class="form-input" placeholder="Nom">
     </label>
 
     <label class="field-container">
-        Numéro de télèphone
-        <input type="text" formControlName="number" class="form-input">
+        <input type="text" formControlName="number" class="form-input" placeholder="Numéro de télèphone">
       </label>
       
     <label class="field-container">
-        Email
-        <input type="text" formControlName="email" class="form-input">
+        <input type="text" formControlName="email" class="form-input" placeholder="Email">
     </label>
 
     <label class="field-container">
-      Photo de contact
       <input type="text" formControlName="picture" class="form-input">
     </label>
 

@@ -1,54 +1,36 @@
 <h1>Search</h1>
 
 <div class="login-container">
-  <form [formGroup]="messageForm" (keyup)="search()" class="login-form">
+  <form [formGroup]="messageForm" class="login-form">
 
     <label class="field-container">
 
-      <input type="text" formControlName="search" class="form-input">
+      <input type="text" formControlName="search" (keyup)="getInput($event)" class="form-input" placeholder="Recherche par nom, prénom, groupe">
 
     </label>
-
-    <input type="submit" value="Rechercher" class="cta">
 
   </form>
 </div>
 
+<div *ngIf="groups">
 
-<h1>Groupe</h1>
-<ul>
-  <li>
-    <img>
-    <p> Nom Prenom</p>
-    <p>0660865532</p>
-  </li>
-  <li>
-    <img>
-    <p> Nom Prenom</p>
-    <p>0660865532</p>
-  </li>
-  <li>
-    <img>
-    <p> Nom Prenom</p>
-    <p>0660865532</p>
-  </li>
-</ul>
+  <h1>Groupes</h1>
+  <ul *ngIf="groups">
+    <li *ngFor="let group of groups" [routerLink]="['/single-group/', group.group_id]">
+      <p >{{ group.name }}</p>
+    </li>
+  </ul>
+  
 
-<h1>Contact</h1>
-<ul>
-  <li>
-    <img>
-    <p> Nom Prenom</p>
-    <p>0660865532</p>
-  </li>
-  <li>
-    <img>
-    <p> Nom Prenom</p>
-    <p>0660865532</p>
-  </li>
-  <li>
-    <img>
-    <p> Nom Prenom</p>
-    <p>0660865532</p>
-  </li>
-</ul>
+</div>
+
+<div *ngIf="contacts">
+  <h1>Contact</h1>
+  <ul>
+      <li *ngFor="let contact of contacts" [routerLink]="['/single-contact/', contact.contact_id]">
+        <img [src]="contact.img_url">
+        <p> {{ contact.firstname }} {{ contact.name }}</p>
+        <p>{{ contact.number }}</p>
+      </li>
+  </ul>
+</div>

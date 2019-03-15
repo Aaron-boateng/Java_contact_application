@@ -1,25 +1,156 @@
+html{
+   margin: 0px;
+   padding: 0px;
+}
 header {
     background: #70f;
+    padding-bottom: none;
   }
   header .logo {
     font-weight: bold;
     font-size: 3em;
   }
   header nav {
-    justify-self: right;
+    width: 100vw;
   }
   header nav ul {
     list-style-type: none;
+    width: 100vw;
   }
-  header nav ul li {
+  .right-container {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    position: absolute;
     float: left;
+    right: 0px;
+  }
+  .left-container {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    float: left;
+    left: 0px;
+  }
+
+  .nav-container{
+
+    text-transform: uppercase;
+    font-size: 1em;
+    padding-bottom: 24px;
+    color: white;
+    font-weight: bold;
+
   }
   header nav ul li a {
-    padding: 2em;
     text-transform: uppercase;
-    font-size: 0.9em;
+    font-size: 1em;
+    justify-content: center;
   }
-  header nav ul li a:hover {
-    background: #8e2bff;
+  .left-container:hover {
+    border-bottom: solid 5px #8e2bff;
   }
+
+  .right-container:hover {
+    border-bottom: solid 5px #8e2bff;
+  }
+.container{
+  margin: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.btn {
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   
+  background-color: #7700FF;
+  color: #ecf0f1;
+  
+  transition: background-color .3s;
+}
+
+.btn:hover, .btn:focus {
+  color: orange;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.btn:before {
+  content: "";
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: block;
+  width: 0;
+  padding-top: 0;
+    
+  border-radius: 100%;
+  
+  background-color: rgba(236, 240, 241, .3);
+  
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+/* Styles, not important */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.btn-circle{
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-logout{
+  float: left;
+  left: 2%;
+  cursor: pointer;
+  background-color: black;
+}
+
+
+.btn-search{
+  position: relative;
+  float: right;
+  right: 2%;
+  cursor: pointer;
+  background-color: skyblue;
+}
+
+
+.btn-search:hover, .btn-search:focus {
+  color: white;
+}

@@ -3,22 +3,21 @@
 <div class="login-container">
   <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" class="login-form">
 
-    <h5 *ngIf="success">Your form is valid!</h5>
 
     <label class="field-container">
       Email
-      <input type="text" formControlName="name" class="form-input">
-      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
-        <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+      <div *ngIf="submitted && messageForm.controls.email.errors" class="error">
+        <div *ngIf="messageForm.controls.email.errors.required">Your email is required</div>
       </div>
+      <input type="text" formControlName="email" class="form-input">
     </label>
 
     <label class="field-container">
       Password
-      <input type="text" formControlName="name" class="form-input">
-      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
-        <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+      <div *ngIf="submitted && messageForm.controls.password.errors" class="error">
+        <div *ngIf="messageForm.controls.password.errors.required">Your password is required</div>
       </div>
+      <input type="password" formControlName="password" class="form-input">
     </label>
 
 

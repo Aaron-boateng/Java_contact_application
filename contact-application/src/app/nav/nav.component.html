@@ -1,15 +1,16 @@
 <header>
   <div class="container">
-    <a routerLink="/" class="logo">CONTACT</a>
     <nav>
-      <ul>
-        <li><a routerLink="/">Login</a></li>
-        <li><a routerLink="register">Register</a></li>
-        <li><a routerLink="contact">Contact</a></li>
-        <li><a routerLink="/group">Group</a></li>
-        <li><a routerLink="/single-contact/1">SingleContact</a></li>
-        <li><a routerLink="/single-group/1">SingleGroup</a></li>
-      </ul>
+      <span *ngIf='!user'>
+        <div class="left-container nav-container" routerLink="/">Login</div>
+        <div class="right-container nav-container" routerLink="register">Register</div>
+      </span>
+      <div *ngIf='user'>
+        <div class="left-container nav-container" routerLink="contact" >Contact</div>
+        <div class="right-container nav-container" routerLink="/group">Group</div>
+      </div>
     </nav>
   </div>
 </header>
+<button class="btn purple btn-circle btn-logout" type="button" (click)="logout()" *ngIf='user'><i class="fas fa-sign-out-alt"></i></button>
+<button class="btn info btn-circle btn-search" type="button" *ngIf='user' routerLink="/search"><i class="fas fa-search"></i></button>
