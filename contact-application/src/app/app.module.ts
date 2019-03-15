@@ -19,6 +19,7 @@ import { UpdateGroupComponent } from './update-group/update-group.component';
 import { SearchComponent } from './search/search.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ContactListComponent } from './contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { environment } from '../environments/environment';
     NewGroupComponent,
     UpdateContactComponent,
     UpdateGroupComponent,
-    SearchComponent
+    SearchComponent,
+    ContactListComponent
   ],
   imports: [
     BrowserModule,

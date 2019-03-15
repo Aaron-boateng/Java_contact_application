@@ -55,4 +55,24 @@ export class SingleGroupComponent implements OnInit {
     
   }
 
+  unsetContactGroup(user_id, group_id){
+
+    this.data.unsetGroupContact(user_id, group_id).subscribe(data => {
+      this.response = data[0];
+      if(this.response.toString() == 'deleted'){
+
+        this.messageError = true;
+        const obj = this;
+
+        setTimeout(function(){
+
+          obj.data.groupRedirection();
+
+        }, 1000);
+
+      }
+    });
+    
+  }
+
 }

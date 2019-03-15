@@ -1,0 +1,121 @@
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul li {
+    background: #eee;
+    padding: 2em;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    display: grid;
+    grid-template-columns: 60px auto;
+  }
+  ul li p {
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  ul li img {
+    border-radius: 50%;
+    width: 100%;
+  }
+
+  .btn {
+    position: relative;
+  
+    display: block;
+    margin: 30px auto;
+    padding: 0;
+  
+    overflow: hidden;
+  
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    
+    background-color: #7700FF;
+    color: #ecf0f1;
+    
+    transition: background-color .3s;
+  }
+  
+  .btn:hover, .btn:focus {
+    background-color: #7700FF;
+  }
+  
+  .btn > * {
+    position: relative;
+  }
+  
+  .top-list{
+
+    margin-top: 150px;
+
+  }
+  .btn span {
+    display: block;
+    padding: 12px 24px;
+  }
+  
+  .btn:before {
+    content: "";
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    display: block;
+    width: 0;
+    padding-top: 0;
+      
+    border-radius: 100%;
+    
+    background-color: rgba(236, 240, 241, .3);
+    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .btn:active:before {
+    width: 120%;
+    padding-top: 120%;
+    
+    transition: width .2s ease-out, padding-top .2s ease-out;
+  }
+  
+  /* Styles, not important */
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  .btn-circle{
+
+    border-radius: 50%;
+    padding: 30px;
+    font-size: 20px;
+
+  }
+
+  .btn-add{
+    background-color: green;
+  }
+
+  .btn-add:hover{
+    background-color: green;
+  }
+
+
+  .btn-sm{
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 15px;
+    margin: 0px;
+    float: right;
+  }
+  
+  

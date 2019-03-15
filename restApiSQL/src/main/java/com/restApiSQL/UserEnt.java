@@ -40,7 +40,7 @@ public class UserEnt{
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(@NotNull String id) {
 		this.id = id;
 	}
 

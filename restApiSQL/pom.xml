@@ -16,8 +16,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<property name="connection.autocommit">true</property>
 	</properties>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

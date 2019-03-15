@@ -1,10 +1,11 @@
 <div layout="row" layout-align="center center">
     <button class="btn  btn-info btn-circle btn-edit-contact" type="button" [routerLink]="['/update-group/', group.group_id]" ><i class="fas fa-pen"></i></button>
+    <button class="btn  btn-circle btn-add-contact" type="button" [routerLink]="['/contact-list/', group.group_id]" ><i class="fas fa-user-plus"></i></button>
 </div>  
 <h1>{{ group.name | uppercase }}</h1>
-<ul *ngIf="groups">
-  <li *ngFor="let contact of group.contact" [routerLink]="['/single-contact/', contact.contact_id]">
-    <p >{{ contact.name }}</p>
+<ul *ngIf="group">
+  <li *ngFor="let contact of group.contact">
+    <p [routerLink]="['/single-contact/', contact.contact_id]" >{{ contact.name }}</p>
   </li>
 </ul>
 <div layout="row" layout-align="center center">

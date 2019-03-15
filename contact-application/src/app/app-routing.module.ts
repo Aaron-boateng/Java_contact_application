@@ -11,6 +11,7 @@ import { NewGroupComponent } from './new-group/new-group.component';
 import { UpdateContactComponent } from './update-contact/update-contact.component';
 import { UpdateGroupComponent } from './update-group/update-group.component';
 import { SearchComponent } from './search/search.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'new-group', component: NewGroupComponent},
   {path: 'update-contact/:id', component: UpdateContactComponent},
   {path: 'update-group/:id', component: UpdateGroupComponent},
+  {path: 'contact-list/:id', component: ContactListComponent},
   {path: 'search', component: SearchComponent}
 ];
 

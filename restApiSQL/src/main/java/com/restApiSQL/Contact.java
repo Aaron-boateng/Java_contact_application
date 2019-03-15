@@ -20,6 +20,7 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Contact{
+	
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer contact_id;
@@ -35,7 +36,7 @@ public class Contact{
     
     private String img_url;
 	
-    @ManyToMany(fetch = FetchType.LAZY,
+    @ManyToMany(fetch = FetchType.EAGER,
             cascade = {
                 CascadeType.PERSIST,
                 CascadeType.MERGE

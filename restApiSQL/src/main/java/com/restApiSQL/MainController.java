@@ -238,7 +238,7 @@ public class MainController{
 		n.setName(name);
 
 		groupsRepository.save(n);
-		
+        
 		response.add("saved");
 		return response;
 
@@ -321,12 +321,13 @@ public class MainController{
 // Group add user route
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping("/group/{group_id}/add/contact/{user_id}")
-	public @ResponseBody String addUserToGroup(@PathVariable("group_id") Integer group_id,
+	public @ResponseBody List<String> addUserToGroup(@PathVariable("group_id") Integer group_id,
 			@PathVariable("user_id") Integer user_id, HttpServletRequest req) {
 
 		Optional<Groups> currentGroup = groupsRepository.findById(group_id);
 		Optional<Contact> currentContact = contactRepository.findById(user_id);
-
+		List<String> response = new ArrayList<>();
+		
 		if (currentGroup.isPresent() && currentContact.isPresent()) {
 
 			Groups group = currentGroup.get();
@@ -337,13 +338,45 @@ public class MainController{
 
 			groupsRepository.save(group);
 
-			return groupListRoute;
+			response.add("saved");
+			return response;
 
 		}
 
-		return "Error: not exist";
+		response.add("not exist");
+		return response;
 
 	}
+
+// Group add user route
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/group/{group_id}/delete/contact/{user_id}")
+public @ResponseBody List<String> deleteUserToGroup(@PathVariable("group_id") Integer group_id,
+				@PathVariable("user_id") Integer user_id, HttpServletRequest req) {
+
+	Optional<Groups> currentGroup = groupsRepository.findById(group_id);
+	Optional<Contact> currentContact = contactRepository.findById(user_id);
+	List<String> response = new ArrayList<>();
+			
+	if (currentGroup.isPresent() && currentContact.isPresent()) {
+
+		Groups group = currentGroup.get();
+		Contact contact = currentContact.get();
+
+		group.getContact().remove(contact);
+		contact.getGroups().remove(group);
+
+		groupsRepository.save(group);
+
+		response.add("saved");
+		return response;
+
+	}
+
+	response.add("not exist");
+	return response;
+
+}
 
 //	Search contact route
 	@CrossOrigin(origins = "http://localhost:4200")

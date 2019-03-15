@@ -1,0 +1,14 @@
+<button class="btn purple btn-circle" type="button" routerLink="/new-contact" ><i class="fas fa-plus"></i></button>
+<div class="top-list">
+<h1>Contact</h1>
+  <ul *ngIf="users">
+    <li *ngFor="let user of users">
+      <img [src]="user.img_url">
+      <p [routerLink]="['/single-contact/', user.contact_id]" > {{ user.firstname }} {{ user.name }}</p>
+      <p>{{ user.number }}</p>
+      <p>
+        <button class="btn btn-add btn-circle btn-sm" type="button" (click)="addContactGroup(user.contact_id, id)" ><i class="fas fa-plus"></i></button>
+      </p>
+    </li>
+  </ul>
+</div>

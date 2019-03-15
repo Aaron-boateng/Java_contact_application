@@ -211,6 +211,31 @@ export class DataService {
     )
   }
 
+
+  // Delete contact
+  unsetGroupContact(user_id, group_id) {
+    return this.http.get('http://localhost:8080/contact/group/'+ group_id +'/delete/contact/' + user_id,
+      {
+        headers:{
+          'content':"application/json",
+          'content-type':"application/x-www-form-urlencoded"
+        }
+      }
+    )
+  }
+
+    // Add contact
+    addGroupContact(user_id, group_id) {
+      return this.http.get('http://localhost:8080/contact/group/'+ group_id +'/add/contact/' + user_id,
+        {
+          headers:{
+            'content':"application/json",
+            'content-type':"application/x-www-form-urlencoded"
+          }
+        }
+      )
+    }
+
   searchContact(input) {
     return this.http.get('http://localhost:8080/contact/search/contact/' + input,
       {
